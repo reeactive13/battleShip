@@ -61,11 +61,11 @@ class Field {
                 break;
             default:
                 System.out.println("Wrong orientation!");
+                Ship.numberOfShips++;
         }
         return hasNeighbours;
     }
 
-    //TODO: check full gameplay
     static void placeShip(String[][] field, Ship ship, int orientation, int firstPointX, int firstPointY) {
         switch (orientation) {
             case 1: // horizontal (left->right)
@@ -75,7 +75,7 @@ class Field {
                 } else {
                     Ship.currentShipToPlace++;
                     for (int i = firstPointY; i <= firstPointY + ship.getSize() - 1; i++) {
-                        field[firstPointX][i] = ship.getName();
+                        field[firstPointX][i] = ship.getName().substring(0, 4).toUpperCase();
                     }
                 }
                 break;
@@ -86,19 +86,28 @@ class Field {
                 } else {
                     Ship.currentShipToPlace++;
                     for (int i = firstPointX; i <= firstPointX + ship.getSize() - 1; i++) {
-                        field[i][firstPointY] = ship.getName();
+                        field[i][firstPointY] = ship.getName().substring(0, 4).toUpperCase();
                     }
                 }
                 break;
             default:
                 System.out.println("Wrong orientation!");
+                Ship.numberOfShips++;
         }
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+        printField(field);
+    }
+
+    private static void printField(String[][] field) {
+        System.out.println("\n     0     1     2     3     4     5     6     7     8     9");
+        System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+        for (int i = 0; i < field.length; i++) {
+            System.out.printf("%d| ", i);
+            for (int j = 0; j < field[0].length; j++) {
                 System.out.printf("%s  ", field[i][j]);
             }
             System.out.println();
         }
+        System.out.println("_______________________________________________________________");
     }
 }
 
