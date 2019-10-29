@@ -49,7 +49,7 @@ class GameLogic {
     }
 
     static void fillField() {
-        System.out.println("Filling your field\nChoose orientation and first point\n(1 - horizontal, 2 - vertical)\nExample:'1 0 6'");
+        System.out.println("Filling your field\nChoose orientation and first point\n(1 - horizontal, 2 - vertical)\nExample:'1 0 4'");
         List<Ship> myShips = createFleet();
         for (int i = 0; i < Ship.numberOfShips; i++) {
             System.out.println("Orientation, X, Y:");
@@ -68,7 +68,7 @@ class GameLogic {
         }
         Ship.numberOfShips = 7;
         Ship.currentShipToPlace = 0;
-        System.out.println("Filling enemy field\nChoose orientation and first point\n(1 - horizontal, 2 - vertical)\nExample:'1 0 6'");
+        System.out.println("Filling enemy field\nChoose orientation and first point\n(1 - horizontal, 2 - vertical)\nExample:'1 0 4'");
         List<Ship> enemyShips = createEnemyFleet();
         for (int i = 0; i < Ship.numberOfShips; i++) {
             System.out.println("Orientation, X, Y:");
