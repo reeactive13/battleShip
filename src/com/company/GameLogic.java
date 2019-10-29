@@ -95,7 +95,7 @@ class GameLogic {
                     Field.setEnemyField(tempField1);
                     setMyHitCounter(1 + getMyHitCounter());
                 } else {
-                    System.out.println("Miss!");
+                    System.out.println("Miss.");
                 }
                 break;
             case 2:
@@ -106,7 +106,7 @@ class GameLogic {
                     Field.setMyField(tempField2);
                     setEnemyHitCounter(1 + getEnemyHitCounter());
                 } else {
-                    System.out.println("Miss!");
+                    System.out.println("Miss.");
                 }
                 break;
         }
